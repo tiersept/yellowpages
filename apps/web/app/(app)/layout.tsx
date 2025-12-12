@@ -16,7 +16,7 @@ export default async function Layout({
         <MapboxGl debug users={users} />
       </div>
 
-      <div className="absolute md:max-w-96 top-0 left-0 md:left-6 flex flex-col pt-[40dvh] md:pt-0 md:min-h-dvh max-h-dvh z-0 md:z-20 py-12 md:top-6">
+      <div className="absolute md:max-w-96 top-0 left-0 md:left-6 flex flex-col pt-[40dvh] md:min-h-dvh max-h-dvh z-0 md:z-20 md:pt-6">
         {children}
       </div>
 

@@ -3,6 +3,7 @@
 import { User } from "@repo/db";
 import { ListItem } from "@repo/ui/list-item/index";
 import { motion } from "../motion";
+import { DEFAULT_SPRING } from "@repo/ui/constants/animation";
 
 export const UserListItem = ({
   user,
@@ -26,6 +27,8 @@ export const UserListItem = ({
           {user.avatar && (
             <motion.img
               layoutId={`user-avatar-${user.id}`}
+              transition={DEFAULT_SPRING}
+              layout="position"
               src={user.avatar}
               alt={`${user.name}'s profile picture`}
               className="w-12 h-12 rounded-full object-cover"
@@ -35,6 +38,7 @@ export const UserListItem = ({
             <motion.h2
               id={nameId}
               layoutId={nameId}
+              transition={DEFAULT_SPRING}
               layout="position"
               className="text-lg font-semibold mb-0.5 ui:group-hover:text-blue-500 transition-colors"
             >
@@ -43,6 +47,7 @@ export const UserListItem = ({
             <motion.p
               id={companyId}
               layoutId={companyId}
+              transition={DEFAULT_SPRING}
               layout="position"
               className="text-sm opacity-70"
             >

@@ -24,7 +24,7 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
         <CardM
           layoutId="card-modal"
           transition={DEFAULT_SPRING}
-          className="absolute p-6 top-6 left-6 max-w-96 z-50"
+          className="absolute p-6 top-6 left-6 md:w-xl z-50"
           onLayoutAnimationComplete={() => {
             setAnimatingId(null);
           }}

@@ -33,7 +33,7 @@ export const UserList = ({ users }: UserListProps) => {
           />
           <ul
             className={cn(
-              "relative flex flex-col overflow-y-auto py-2 px-2",
+              "relative flex flex-col overflow-y-auto overflow-x-hidden py-2 px-2 h-[calc(100dvh-3rem)]",
               !!animatingId
                 ? "scrollbar-none"
                 : "scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent"

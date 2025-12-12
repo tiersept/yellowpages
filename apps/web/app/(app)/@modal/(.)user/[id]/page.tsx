@@ -43,6 +43,7 @@ export default async function UserPage({
         {user.avatar && (
           <motion.img
             layoutId={`user-avatar-${user.id}`}
+            transition={DEFAULT_SPRING}
             src={user.avatar}
             alt={user.name}
             className="w-24 h-24 rounded-full object-cover"
@@ -52,6 +53,7 @@ export default async function UserPage({
           <motion.h1
             layoutId={`user-name-${user.id}`}
             layout="position"
+            transition={DEFAULT_SPRING}
             className="text-3xl font-bold mb-2"
           >
             {user.name}
@@ -59,18 +61,32 @@ export default async function UserPage({
           <motion.p
             layoutId={`company-name-${user.id}`}
             layout="position"
+            transition={DEFAULT_SPRING}
             className="text-lg opacity-70"
           >
             {company.name}
           </motion.p>
-          <p className="text-sm opacity-50 italic">{company.catchPhrase}</p>
+          <motion.p
+            className="text-sm opacity-50 italic"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.44, ...DEFAULT_SPRING },
+            }}
+          >
+            {company.catchPhrase}
+          </motion.p>
         </div>
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 0.42 } }}
-        transition={DEFAULT_SPRING}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.44, ...DEFAULT_SPRING },
+        }}
         className="space-y-4 mb-6"
       >
         <div>
