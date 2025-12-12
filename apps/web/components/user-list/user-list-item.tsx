@@ -2,7 +2,6 @@
 
 import { User } from "@repo/db";
 import { ListItem } from "@repo/ui/list-item/index";
-import { Tag } from "@repo/ui/tag/index";
 import { motion } from "../motion";
 
 export const UserListItem = ({

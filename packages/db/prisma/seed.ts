@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 import { prisma } from "../src";
 
 const __filename = fileURLToPath(import.meta.url);
-const rootDir = resolve(dirname(__filename), "..", "..", "..");
-config({ path: resolve(rootDir, ".env") });
+const dbDir = resolve(dirname(__filename), "..");
+config({ path: resolve(dbDir, ".env") });
 
 const BATCH_SIZE = 500;
 const USER_COUNT = parseInt(process.env.SEED_USER_COUNT || "100", 10);

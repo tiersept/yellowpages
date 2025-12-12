@@ -6,9 +6,9 @@ import { CardM } from "@repo/ui/card/index";
 import { AnimatePresence } from "motion/react";
 import { useLayoutNavigation } from "../../hooks/use-layout-navigation";
 import { DEFAULT_SPRING } from "@repo/ui/constants/animation";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect } from "react";
+import { cn } from "@repo/utils";
 
 interface UserListProps {
   users: User[];
@@ -17,9 +17,6 @@ interface UserListProps {
 export const UserList = ({ users }: UserListProps) => {
   const { isOpen, pushToUserPage, animatingId, setAnimatingId } =
     useLayoutNavigation();
-  const params = useParams();
-
-  console.log({ isOpen, params, animatingId });
 
   useEffect(() => {
     setAnimatingId(null);
@@ -32,10 +29,15 @@ export const UserList = ({ users }: UserListProps) => {
           <CardM
             layoutId="card-modal"
             transition={DEFAULT_SPRING}
-            className="absolute w-full h-[calc(100dvh-3rem)] flex flex-col scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent"
+            className="absolute w-full h-[calc(100dvh-3rem)] flex flex-col"
           />
           <ul
-            className="relative flex flex-col overflow-y-auto py-2 px-2 scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent"
+            className={cn(
+              "relative flex flex-col overflow-y-auto py-2 px-2",
+              !!animatingId
+                ? "scrollbar-none"
+                : "scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent"
+            )}
             role="list"
           >
             {users.map((user) => {
