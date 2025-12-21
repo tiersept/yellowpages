@@ -48,7 +48,7 @@ echo 'DATABASE_URL="postgresql://yellowpages:yellowpages@localhost:5432/yellowpa
 # Create .env file in apps/web/
 cat > apps/web/.env << EOF
 DATABASE_URL="postgresql://yellowpages:yellowpages@localhost:5432/yellowpages?schema=public"
-NEXT_PUBLIC_MAPBOX_TOKEN="pk.eyJ1IjoidGllcnNlcHQiLCJhIjoiY201MHVuNm40MXh4ZDJqcXdzYzd4M2xrYSJ9.UBIgHLNVk5mWf5dmbInrSg"
+NEXT_PUBLIC_MAPBOX_TOKEN="TOKEN"
 EOF
 ```
 
